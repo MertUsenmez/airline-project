@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "f2fa209c-8b41-46fa-8357-2a2cde8db1d3",
+		"name": "AirlineCompany",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/airline/company/create",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"abc\",\r\n    \"nation\":\"Turkey\",\r\n    \"passengerCapacity\":2100,\r\n    \"companyContacts\":{\r\n        \"companyContactId\":12,\r\n        \"city\":\"Istanbul\",\r\n        \"country\":\"Turkey\",\r\n        \"mobilePhone\":\"+901248751454\",\r\n        \"fax\":\"84845148\",\r\n        \"addressDecription\":\"seefe efefdsf dsfgtrgtr\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/airline/company/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"airline",
+						"company",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/airline/company/search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/airline/company/search?name=THY&nation=Turkey",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"airline",
+						"company",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "THY"
+						},
+						{
+							"key": null,
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "nation",
+							"value": "Turkey"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/airport/create",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"airportId\":12334,\r\n    \"airportName\":\"Esenboga\",\r\n    \"contact\":{\r\n        \"companyContactId\":10,\r\n        \"city\":\"Ankara\",\r\n        \"country\":\"Turkey\",\r\n        \"mobilePhone\":\"+901248751454\",\r\n        \"fax\":\"84845148\",\r\n        \"addressDecription\":\"seefe efefdsf dsfgtrgtr\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/airport/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"airport",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/airport/search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/airport/search?name=Esenboga",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"airport",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Esenboga"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/flight/define",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"flightId\":123234,\r\n    \"flightCode\":\"ach32445\",\r\n    \"flightQuota\":90,\r\n    \"isActive\":1,\r\n    \"routeEntity\":{\r\n        \"routeId\":85,\r\n\r\n        \"comingFrom\":{\r\n        \"airportId\":12334,\r\n        \"airportName\":\"Esenboga\",\r\n        \"contact\":{\r\n        \"companyContactId\":10,\r\n        \"city\":\"Ankara\",\r\n        \"country\":\"Turkey\",\r\n        \"mobilePhone\":\"+901248751454\",\r\n        \"fax\":\"84845148\",\r\n        \"addressDecription\":\"seefe efefdsf dsfgtrgtr\"\r\n    }\r\n        },\r\n        \"goingOn\":{\r\n        \"airportId\":12337,\r\n        \"airportName\":\"Sabiha Gökçen\",\r\n        \"contact\":{\r\n        \"companyContactId\":11,\r\n        \"city\":\"Istanbul\",\r\n        \"country\":\"Turkey\",\r\n        \"mobilePhone\":\"+90124831454\",\r\n        \"fax\":\"84845348\",\r\n        \"addressDecription\":\"seefe efefdsf dsfgtrgtr\"\r\n    }\r\n        },\r\n\r\n        \"estimatedTime\":\"6 hour\"\r\n    },\r\n    \"airlineCompanyEntity\":{\r\n    \"airlineCompanyId\":2154,\r\n    \"companyName\":\"abc\",\r\n    \"nation\":\"Turkey\",\r\n    \"passengerCapacity\":2100,\r\n    \"companyContactList\":{\r\n        \"companyContactId\":12,\r\n        \"city\":\"Istanbul\",\r\n        \"country\":\"Turkey\",\r\n        \"mobilePhone\":\"+901248751454\",\r\n        \"fax\":\"84845148\",\r\n        \"addressDecription\":\"seefe efefdsf dsfgtrgtr\"\r\n    }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/flight/define",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"flight",
+						"define"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/flight/search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"flightCode\": \"ach261534\",\r\n    \"airlineCompanyName\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/flight/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"flight",
+						"search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
